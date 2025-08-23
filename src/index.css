@@ -1,23 +1,171 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom animations */
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
+/* src/index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+:root {
+  /* Colors */
+  --color-primary: #3b82f6;
+  --color-secondary: #a855f7;
+  --color-accent: #ec4899;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(to right, #3b82f6, #a855f7);
+  --gradient-secondary: linear-gradient(to right, #10b981, #14b8a6);
+  --gradient-accent: linear-gradient(to right, #f59e0b, #ef4444);
+  --gradient-purple-pink: linear-gradient(to right, #a855f7, #ec4899);
+  --gradient-blue-purple: linear-gradient(to right, #3b82f6, #a855f7, #ec4899);
+  
+  /* Dark theme colors */
+  --bg-primary: #000000;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1f2937;
+  --bg-card: rgba(31, 41, 55, 0.5);
+  --bg-hover: rgba(55, 65, 81, 0.5);
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  
+  /* Border colors */
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.2);
+  --border-hover: rgba(255, 255, 255, 0.3);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-secondary);
+}
+
+/* Global utility classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

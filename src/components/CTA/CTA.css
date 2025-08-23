@@ -1,0 +1,96 @@
+/* src/components/CTA/CTA.css */
+.cta {
+  padding: 6rem 0;
+}
+
+.cta__box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+.cta__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__external-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.25rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .cta__box {
+    padding: 2rem;
+  }
+
+  .cta__title {
+    font-size: 2rem;
+  }
+
+  .cta__description {
+    font-size: 1rem;
+  }
+
+  .cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta__actions .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

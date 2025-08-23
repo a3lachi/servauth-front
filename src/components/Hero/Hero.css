@@ -1,0 +1,125 @@
+/* src/components/Hero/Hero.css */
+.hero {
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero__content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.hero__content--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero__badge-icon {
+  width: 16px;
+  height: 16px;
+  color: #f59e0b;
+}
+
+.hero__badge span {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.hero__title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero__description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hero__stat {
+  text-align: center;
+}
+
+.hero__stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero__stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 8rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

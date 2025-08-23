@@ -1,0 +1,40 @@
+/* src/components/common/GradientText/GradientText.css */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.gradient-text--primary {
+  background-image: var(--gradient-primary);
+}
+
+.gradient-text--secondary {
+  background-image: var(--gradient-secondary);
+}
+
+.gradient-text--accent {
+  background-image: var(--gradient-accent);
+}
+
+.gradient-text--purple-pink {
+  background-image: var(--gradient-purple-pink);
+}
+
+.gradient-text--blue-purple {
+  background-image: var(--gradient-blue-purple);
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

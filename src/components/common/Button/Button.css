@@ -1,0 +1,93 @@
+/* src/components/common/Button/Button.css */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Variants */
+.button--primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  filter: brightness(1.1);
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.button--ghost {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sizes */
+.button--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.button--medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.button--large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Icons */
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button__icon--left {
+  margin-right: 0.25rem;
+}
+
+.button__icon--right {
+  margin-left: 0.25rem;
+  transition: transform var(--transition-base);
+}
+
+.button:hover .button__icon--right {
+  transform: translateX(4px);
+}

@@ -1,0 +1,44 @@
+/* src/components/Footer/Footer.css */
+.footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-primary);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer__logo {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+}
+
+.footer__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.footer__text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,126 @@
+/* src/components/CodeExamples/CodeExamples.css */
+.code-examples {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, transparent, rgba(31, 41, 55, 0.2), transparent);
+}
+
+.code-examples__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.code-examples__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.code-examples__subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.code-examples__container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(31, 41, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-primary);
+  overflow: hidden;
+}
+
+.code-examples__tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.code-examples__tab {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.code-examples__tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.code-examples__tab--active {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.code-examples__tab--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+}
+
+.code-examples__content {
+  position: relative;
+}
+
+.code-examples__code {
+  padding: 2rem;
+  margin: 0;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.code-examples__code code {
+  display: block;
+  white-space: pre;
+}
+
+.code-examples__copy {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.code-examples__copy:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.code-examples__copy svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .code-examples__title {
+    font-size: 2rem;
+  }
+
+  .code-examples__tabs {
+    flex-direction: column;
+  }
+
+  .code-examples__code {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,37 @@
+/* src/components/TechStack/TechStack.css */
+.tech-stack {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, transparent, rgba(31, 41, 55, 0.2), transparent);
+}
+
+.tech-stack__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tech-stack__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.tech-stack__subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.tech-stack__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tech-stack__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-stack__title {
+    font-size: 2rem;
+  }
+}
