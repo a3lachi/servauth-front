@@ -20,9 +20,13 @@ const Navigation = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'navigation--scrolled' : ''}`}>
       <div className="navigation__container container">
-        <div className="navigation__logo">
-          <ShieldIcon className="navigation__logo-icon" />
-          <span className="navigation__logo-text">ServAuth</span>
+        <div
+            className="navigation__logo"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ cursor: "pointer" }}
+            >
+            <ShieldIcon className="navigation__logo-icon" />
+            <span className="navigation__logo-text">ServAuth</span>
         </div>
 
         <div className={`navigation__menu ${isMobileMenuOpen ? 'navigation__menu--open' : ''}`}>
@@ -32,7 +36,8 @@ const Navigation = () => {
           <Button
             variant="secondary"
             size="small"
-            href="https://github.com/yourusername/auth-server"
+             target="_blank"
+            href="https://github.com/a3lachi/servauth"
             icon={<GithubIcon className="button-icon" />}
           >
             GitHub

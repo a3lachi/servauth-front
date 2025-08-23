@@ -1,64 +1,41 @@
-// src/components/QuickStart/QuickStart.js
-import React from 'react';
-import './QuickStart.css';
-import StepCard from './StepCard';
-import GradientText from '../common/GradientText/GradientText';
 
-const QuickStart = () => {
-  const steps = [
-    { 
-      step: 1, 
-      title: "Clone the repository", 
-      command: "git clone https://github.com/yourusername/auth-server.git\ncd auth-server" 
-    },
-    { 
-      step: 2, 
-      title: "Install dependencies", 
-      command: "bun install" 
-    },
-    { 
-      step: 3, 
-      title: "Set up environment", 
-      command: "cp .env.example .env\n# Edit .env with your configuration" 
-    },
-    { 
-      step: 4, 
-      title: "Run with Docker", 
-      command: "docker-compose up -d" 
-    },
-    { 
-      step: 5, 
-      title: "Access your server", 
-      command: "curl http://localhost:3000/health" 
-    }
-  ];
+
+
+// src/components/QuickStart/StepCard.js
+import React, { useState } from 'react';
+import './StepCard.css';
+import { CopyIcon, CheckIcon } from '../common/Icons/Icons';
+
+const StepCard = ({ step, title, command, index }) => {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
-    <section id="quickstart" className="quickstart section">
-      <div className="container">
-        <div className="quickstart__header">
-          <h2 className="quickstart__title">
-            <GradientText variant="secondary" as="span">
-              Quick Start
-            </GradientText>
-          </h2>
-          <p className="quickstart__subtitle">Deploy your auth server in minutes</p>
-        </div>
-
-        <div className="quickstart__steps">
-          {steps.map((step, index) => (
-            <StepCard
-              key={index}
-              step={step.step}
-              title={step.title}
-              command={step.command}
-              index={index}
-            />
-          ))}
+    <div 
+      className="step-card"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      <div className="step-card__number">{step}</div>
+      <div className="step-card__content">
+        <h3 className="step-card__title">{title}</h3>
+        <div className="step-card__command-container">
+          <pre className="step-card__command">{command}</pre>
+          <button
+            onClick={copyToClipboard}
+            className="step-card__copy"
+            aria-label="Copy command"
+          >
+            {copied ? <CheckIcon /> : <CopyIcon />}
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default QuickStart;
+export default StepCard;

@@ -1,5 +1,4 @@
 // src/components/common/GradientText/GradientText.js
-import React from 'react';
 import './GradientText.css';
 
 const GradientText = ({ children, variant = 'primary', className = '', as: Component = 'span' }) => {

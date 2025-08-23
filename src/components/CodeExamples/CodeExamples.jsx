@@ -16,6 +16,7 @@ const CodeExamples = () => {
     "password": "SecurePass123!",
     "name": "John Doe"
   }'`,
+
     javascript: `const response = await fetch('http://localhost:3000/auth/register', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
@@ -28,6 +29,7 @@ const CodeExamples = () => {
 
 const data = await response.json();
 console.log('User registered:', data);`,
+
     typescript: `interface RegisterData {
   email: string;
   password: string;
@@ -42,7 +44,49 @@ const registerUser = async (data: RegisterData) => {
   });
   
   return response.json();
-};`
+};`,
+
+    python: `import requests
+
+url = "http://localhost:3000/auth/register"
+payload = {
+    "email": "user@example.com",
+    "password": "SecurePass123!",
+    "name": "John Doe"
+}
+headers = {"Content-Type": "application/json"}
+
+response = requests.post(url, json=payload, headers=headers)
+print("User registered:", response.json())`,
+
+    go: `package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "net/http"
+)
+
+func main() {
+    url := "http://localhost:3000/auth/register"
+    payload := map[string]string{
+        "email":    "user@example.com",
+        "password": "SecurePass123!",
+        "name":     "John Doe",
+    }
+
+    body, _ := json.Marshal(payload)
+    resp, err := http.Post(url, "application/json", bytes.NewBuffer(body))
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    var result map[string]interface{}
+    json.NewDecoder(resp.Body).Decode(&result)
+    fmt.Println("User registered:", result)
+}`
   };
 
   const copyToClipboard = () => {

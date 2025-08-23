@@ -62,24 +62,35 @@ const Hero = () => {
 
           <div className="hero__stats">
             <div className="hero__stat">
-              <div className="hero__stat-value">
+                <div className="hero__stat-value">
                 <GradientText variant="secondary">&lt;200ms</GradientText>
-              </div>
-              <div className="hero__stat-label">Response Time</div>
+                </div>
+                <div className="hero__stat-label">Response Time</div>
             </div>
+
             <div className="hero__stat">
-              <div className="hero__stat-value">
+                <div className="hero__stat-value">
                 <GradientText variant="accent">10k+</GradientText>
-              </div>
-              <div className="hero__stat-label">Concurrent Users</div>
+                </div>
+                <div className="hero__stat-label">Concurrent Users</div>
             </div>
+
             <div className="hero__stat">
-              <div className="hero__stat-value">
+                <div className="hero__stat-value">
                 <GradientText variant="purple-pink">5 min</GradientText>
-              </div>
-              <div className="hero__stat-label">Setup Time</div>
+                </div>
+                <div className="hero__stat-label">Setup Time</div>
+            </div>
+
+            {/* New stat */}
+            <div className="hero__stat">
+                <div className="hero__stat-value">
+                <GradientText >20+</GradientText>
+                </div>
+                <div className="hero__stat-label">APIs Supported</div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

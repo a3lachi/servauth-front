@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer__content">
           <div className="footer__brand">
             <ShieldIcon className="footer__logo" />
-            <span className="footer__name">AuthServer</span>
+            <span className="footer__name">ServAuth</span>
           </div>
           <div className="footer__text">
             Built with ❤️ using Bun, Hono, Better-Auth & Drizzle
