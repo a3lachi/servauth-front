@@ -55,7 +55,7 @@
 .hero__description {
   font-size: 1.25rem;
   color: var(--text-secondary);
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
 }
@@ -122,4 +122,10 @@
     width: 100%;
     max-width: 300px;
   }
+}
+
+.big-text {
+  font-size: 7rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }

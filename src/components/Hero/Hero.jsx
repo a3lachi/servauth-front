@@ -27,6 +27,10 @@ const Hero = () => {
           </div>
 
           <h1 className="hero__title">
+            <GradientText variant="accent" as="span" className="big-text">
+              ServAuth 
+            </GradientText>
+            <br />
             <GradientText variant="blue-purple" as="span">
               Lightning Fast
             </GradientText>
@@ -46,6 +50,7 @@ const Hero = () => {
               onClick={copyToClipboard}
               icon={<TerminalIcon />}
               iconPosition="left"
+              href="#quickstart" 
             >
               Get Started
             </Button>

@@ -17,14 +17,15 @@ const CTA = () => {
             <Button
               variant="primary"
               size="large"
-              href="https://github.com/yourusername/auth-server"
+              href="https://github.com/a3lachi/servauth"
+              target="_blank"
               icon={<GithubIcon />}
               iconPosition="left"
             >
               View on GitHub
               <ExternalLinkIcon className="cta__external-icon" />
             </Button>
-            <Button
+            {/* <Button
               variant="secondary"
               size="large"
               href="/docs"
@@ -32,7 +33,7 @@ const CTA = () => {
               iconPosition="left"
             >
               Read Documentation
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
