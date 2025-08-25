@@ -15,7 +15,7 @@ import AnimatedBackground from './components/AnimatedBackground/AnimatedBackgrou
 function App() {
   useEffect(() => {
     // Set tab title
-    document.title = "ServAuth - Authentication Server";
+    document.title = "ServAuth";
 
     // Set favicon
     const link =
